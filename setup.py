@@ -5,10 +5,9 @@ def read_requirements():
         return req_file.read().splitlines()
 
 setup(
-    name="APP_NAME",
+    name="ampere_core",
     version="1.0",
-    packages=find_packages(exclude=["tests*", "test*"]),
+    packages=find_packages(exclude=["tests*"]),
     package_dir={"": "src"},
     install_requires=read_requirements(),
 )
-

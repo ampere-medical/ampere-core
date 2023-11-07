@@ -1,0 +1,11 @@
+config_version: 1.0
+name: MESSAGE.v.1.0
+prepend_type_name: true
+fields:
+- name: message
+  type: "variable_bytes_32"
+  inner_type: INNER_MESSAGE.v.1.0
+- name: signature
+  type: "variable_bytes_16"
+- name: signer_identity
+  type: "variable_string_8"
