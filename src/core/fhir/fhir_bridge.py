@@ -1,4 +1,23 @@
 import requests
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 class Patient:
     pass
 class Bundle:
@@ -54,3 +73,4 @@ class FHIRBridge:
         response = requests.get(
             f"{self.fhir_server_url}/MedicationDispense?patient={patient_id}",
             headers={"Authorization": self.fhir_server})
+'''

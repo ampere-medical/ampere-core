@@ -3,3 +3,6 @@ pymongo
 cryptography
 pyyaml
 pyzmq
+openai
+tiktoken
+requests
