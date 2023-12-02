@@ -11,6 +11,7 @@ class UserMongoDatabase(UserDatabaseInterface, MongoDatabase):
         MongoDatabase.__init__(self, database_info)
         self.users = self.db['users']
         self.sessions = self.db['sessions']
+        self.patients = self.db['patients']
 
     def login_user(self, username, password):
         user = self.users.find_one({"username": username, "password": password})  # Consider hashing the password for better security
