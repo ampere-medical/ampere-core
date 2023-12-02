@@ -6,3 +6,4 @@ pyzmq
 openai
 tiktoken
 requests
+fhirclient

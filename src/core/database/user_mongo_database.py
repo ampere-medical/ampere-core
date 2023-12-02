@@ -66,6 +66,23 @@ class UserMongoDatabase(UserDatabaseInterface, MongoDatabase):
             "active_sessions": []
         })
         return "User added"
+    
+    def add_patient(self, patient_id, patient_data):
+        patient = self.patients.find_one({"patient_id": patient_id})
+        if patient:
+            return "Patient already exists"
+            
+        self.patients.insert_one({
+            "patient_id": patient_id,
+            "patient_data": patient_data
+        })
+        return "Patient added"
+    
+    def get_patient(self, patient_id):
+        patient = self.patients.find_one({"patient_id": patient_id})
+        if not patient:
+            return None
+        return patient.get("patient_data","error")
 
     def has_admin_permissions(self, username):
         user = self.users.find_one({"username": username})

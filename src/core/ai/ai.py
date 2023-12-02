@@ -127,7 +127,6 @@ def chatGPTRequest(prompt_text="Say this is a test!"):
     #         print(chunk.choices[0].delta.content, end="")
 
 
-
 '''
 chatGPT request interface
 
