@@ -69,9 +69,11 @@ class UserMongoDatabase(UserDatabaseInterface, MongoDatabase):
         return "User added"
     
     def add_patient(self, patient_id, patient_data):
+        print("adding patient")
         patient = self.patients.find_one({"patient_id": patient_id})
         if patient:
-            return "Patient already exists"
+            # delete patient so that we can put a new one in
+            self.patients.delete_one({"patient_id": patient_id})
             
         self.patients.insert_one({
             "patient_id": patient_id,
